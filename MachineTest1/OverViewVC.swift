@@ -48,18 +48,20 @@ extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "GeneralInfoCell", for: indexPath) as! GeneralInfoCell
             //cell.backgroundColor = .lightGray
+            //cell.backgroundColor = .green
             return cell
         }else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventLocationCell", for: indexPath) as! EventLocationCell
-            //cell.backgroundColor = .lightGray
+            //cell.backgroundColor = .black
             return cell
         }else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BriefDescriptionCell", for: indexPath) as! BriefDescriptionCell
             cell.labelBriefDescription.text = "A brief description about the event. It is just a static text.  A brief description about the text. A static text to check the dynamic content in the label. Static text for demo purpose. And a brief description for the event A brief description about the event. It is just a static text.  A brief description about the text. A static text to check the dynamic content in the label. Static text for demo purpose. And a brief description for the event"
-            //cell.backgroundColor = .lightGray
+            cell.backgroundColor = .blue//
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventOrganizerCell", for: indexPath) as! EventOrganizerCell
+           // cell.backgroundColor = .red
             cell.collectionView.reloadData()
             cell.viewOrganizersInfo.isHidden = true
             return cell
@@ -80,9 +82,13 @@ extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!) as! EventOrganizerCell
-        currentCell.viewOrganizersInfo.isHidden = false
+        debugPrint("Did Select")
+        debugPrint(indexPath.row)
+        if indexPath.row == 3 {
+            let currentCell = tableView.cellForRow(at: indexPath) as! EventOrganizerCell
+            currentCell.viewOrganizersInfo.isHidden = false
+        }
+        
     }
     
 }

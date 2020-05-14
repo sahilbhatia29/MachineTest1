@@ -30,9 +30,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Fd-aP-nti">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Fd-aP-nti">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mkW-Dt-Edl" id="49e-zJ-vTu"/>
                                     <outlet property="delegate" destination="mkW-Dt-Edl" id="hrD-hn-EW5"/>
@@ -82,6 +83,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCe-cW-WcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2173" y="85"/>
+        </scene>
+        <!--Demo Vc-->
+        <scene sceneID="zux-BU-BWo">
+            <objects>
+                <viewController storyboardIdentifier="DemoVc" id="1Wq-nf-5Oi" customClass="DemoVc" customModule="MachineTest1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sgb-AB-XLB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQU-KF-pzS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="qZA-hz-jcu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yrw-UG-hnm" firstAttribute="trailing" secondItem="CQU-KF-pzS" secondAttribute="trailing" id="7No-UT-J03"/>
+                            <constraint firstItem="CQU-KF-pzS" firstAttribute="leading" secondItem="yrw-UG-hnm" secondAttribute="leading" id="Gyy-wr-vya"/>
+                            <constraint firstItem="CQU-KF-pzS" firstAttribute="top" secondItem="yrw-UG-hnm" secondAttribute="top" id="Lx4-1G-hMS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yrw-UG-hnm"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewItems" destination="CQU-KF-pzS" id="2Ye-ux-LQc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7x-x9-IZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2896.875" y="84.507042253521121"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="eFd-Rw-c9Y">

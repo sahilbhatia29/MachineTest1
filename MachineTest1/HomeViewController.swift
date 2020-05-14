@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonFeatured: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewModelObject = ViewModel()
+        viewModelObject.loadData()
         self.setCornerRadius()
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
 //        self.contentView.addGestureRecognizer(tap)
@@ -33,9 +35,10 @@ class HomeViewController: UIViewController {
               return
             }
            addChild(childVC)
-          childVC.view.frame = CGRect(x: 0, y: 0, width: self.viewItems.frame.width, height: self.view.frame.height+1000)
-        childVC.view.isUserInteractionEnabled = true
-            viewItems.addSubview(childVC.view)
+        childVC.view.frame = CGRect(x: 0, y: self.view.frame.height * 0.5, width: self.contentView.frame.width, height: self.scrollView.frame.height+1000)
+          childVC.view.isUserInteractionEnabled = true
+        self.scrollView.addSubview(childVC.view)
+            self.addChild(childVC)
             childVC.didMove(toParent: self)
 
         // Do any additional setup after loading the view.
