@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3A3C3376C21FEB57D9EA1AA2 /* Pods_MachineTest1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143368E96F399CD32D5355A9 /* Pods_MachineTest1Tests.framework */; };
+		6B3F8918246DCD8500853971 /* EventSponsorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3F8916246DCD8500853971 /* EventSponsorsCell.swift */; };
+		6B3F8919246DCD8500853971 /* EventSponsorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3F8917246DCD8500853971 /* EventSponsorsCell.xib */; };
+		6B3F891E246DCE6F00853971 /* EventSponsorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3F891C246DCE6F00853971 /* EventSponsorCollectionCell.swift */; };
+		6B3F891F246DCE6F00853971 /* EventSponsorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3F891D246DCE6F00853971 /* EventSponsorCollectionCell.xib */; };
 		6BEE6A1B2469B47F00C46E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE6A1A2469B47F00C46E67 /* AppDelegate.swift */; };
 		6BEE6A1D2469B47F00C46E67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE6A1C2469B47F00C46E67 /* SceneDelegate.swift */; };
 		6BEE6A222469B47F00C46E67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BEE6A202469B47F00C46E67 /* Main.storyboard */; };
@@ -57,6 +61,10 @@
 /* Begin PBXFileReference section */
 		143368E96F399CD32D5355A9 /* Pods_MachineTest1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MachineTest1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1FB6FE87184B46A215558F /* Pods-MachineTest1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MachineTest1Tests.debug.xcconfig"; path = "Target Support Files/Pods-MachineTest1Tests/Pods-MachineTest1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B3F8916246DCD8500853971 /* EventSponsorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSponsorsCell.swift; sourceTree = "<group>"; };
+		6B3F8917246DCD8500853971 /* EventSponsorsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSponsorsCell.xib; sourceTree = "<group>"; };
+		6B3F891C246DCE6F00853971 /* EventSponsorCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSponsorCollectionCell.swift; sourceTree = "<group>"; };
+		6B3F891D246DCE6F00853971 /* EventSponsorCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSponsorCollectionCell.xib; sourceTree = "<group>"; };
 		6BEE6A172469B47F00C46E67 /* MachineTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachineTest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEE6A1A2469B47F00C46E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BEE6A1C2469B47F00C46E67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +216,10 @@
 				6BEE6A6D246AA2BD00C46E67 /* EventOrganizerCell.xib */,
 				6BEE6A70246AA64200C46E67 /* EventOrganizerCollectionCell.swift */,
 				6BEE6A71246AA64200C46E67 /* EventOrganizerCollectionCell.xib */,
+				6B3F8916246DCD8500853971 /* EventSponsorsCell.swift */,
+				6B3F8917246DCD8500853971 /* EventSponsorsCell.xib */,
+				6B3F891C246DCE6F00853971 /* EventSponsorCollectionCell.swift */,
+				6B3F891D246DCE6F00853971 /* EventSponsorCollectionCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -353,7 +365,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BEE6A6B246A9D0600C46E67 /* BriefDescriptionCell.xib in Resources */,
+				6B3F8919246DCD8500853971 /* EventSponsorsCell.xib in Resources */,
 				6BEE6A61246A903000C46E67 /* GeneralInfoCell.xib in Resources */,
+				6B3F891F246DCE6F00853971 /* EventSponsorCollectionCell.xib in Resources */,
 				6BEE6A6F246AA2BD00C46E67 /* EventOrganizerCell.xib in Resources */,
 				6BEE6A73246AA64200C46E67 /* EventOrganizerCollectionCell.xib in Resources */,
 				6BEE6A2A2469B48000C46E67 /* LaunchScreen.storyboard in Resources */,
@@ -498,8 +512,10 @@
 				6BEE6A5C2469E70500C46E67 /* HomeViewController.swift in Sources */,
 				6BEE6A582469C9DF00C46E67 /* AdditionalInfoVC.swift in Sources */,
 				6BEE6A6A246A9D0600C46E67 /* BriefDescriptionCell.swift in Sources */,
+				6B3F891E246DCE6F00853971 /* EventSponsorCollectionCell.swift in Sources */,
 				6BEE6A1D2469B47F00C46E67 /* SceneDelegate.swift in Sources */,
 				6BEE6A252469B47F00C46E67 /* MachineTest1.xcdatamodeld in Sources */,
+				6B3F8918246DCD8500853971 /* EventSponsorsCell.swift in Sources */,
 				6BEE6A60246A903000C46E67 /* GeneralInfoCell.swift in Sources */,
 				6BEE6A562469C99C00C46E67 /* OverViewVC.swift in Sources */,
 			);

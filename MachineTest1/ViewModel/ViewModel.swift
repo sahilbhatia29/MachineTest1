@@ -20,14 +20,14 @@ class ViewModel: NSObject {
 
        var request = URLRequest(url: URL(string: "http://saudicalendar.com/api/user/getEventDetail")!)
        request.httpMethod = "POST"
-       request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params as [String: AnyObject], options: [])
        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
        let session = URLSession.shared
        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
            print(response!)
            do {
-               let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+            let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
                print(json)
            } catch {
                print("error")

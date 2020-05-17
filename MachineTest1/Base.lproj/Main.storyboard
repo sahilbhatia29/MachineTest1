@@ -32,7 +32,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Fd-aP-nti">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.87887471910000003" green="0.88992470499999998" blue="0.9074967504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mkW-Dt-Edl" id="49e-zJ-vTu"/>

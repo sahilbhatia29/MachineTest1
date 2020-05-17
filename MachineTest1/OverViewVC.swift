@@ -11,12 +11,15 @@ import UIKit
 class OverViewVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var isViewHidden = true
+    var isViewEventSponsorHidden = true
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GeneralInfoCell", bundle: nil), forCellReuseIdentifier: "GeneralInfoCell")
         tableView.register(UINib(nibName: "EventLocationCell", bundle: nil), forCellReuseIdentifier: "EventLocationCell")
         tableView.register(UINib(nibName: "BriefDescriptionCell", bundle: nil), forCellReuseIdentifier: "BriefDescriptionCell")
         tableView.register(UINib(nibName: "EventOrganizerCell", bundle: nil), forCellReuseIdentifier: "EventOrganizerCell")
+        tableView.register(UINib(nibName: "EventSponsorsCell", bundle: nil), forCellReuseIdentifier: "EventSponsorsCell")
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -40,7 +43,7 @@ class OverViewVC: UIViewController {
 
 extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
         
     }
     
@@ -59,25 +62,54 @@ extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
             cell.labelBriefDescription.text = "A brief description about the event. It is just a static text.  A brief description about the text. A static text to check the dynamic content in the label. Static text for demo purpose. And a brief description for the event A brief description about the event. It is just a static text.  A brief description about the text. A static text to check the dynamic content in the label. Static text for demo purpose. And a brief description for the event"
             cell.backgroundColor = .blue//
             return cell
-        }else {
+        }else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventOrganizerCell", for: indexPath) as! EventOrganizerCell
            // cell.backgroundColor = .red
             cell.collectionView.reloadData()
-            cell.viewOrganizersInfo.isHidden = true
+            if self.isViewHidden == true {
+                cell.viewOrganizersInfo.isHidden = true
+            }else {
+                cell.viewOrganizersInfo.isHidden = false
+            }
+            
             return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EventSponsorsCell", for: indexPath) as! EventSponsorsCell
+            // cell.backgroundColor = .red
+             cell.collectionView.reloadData()
+             if self.isViewEventSponsorHidden == true {
+                 cell.viewToHide.isHidden = true
+             }else {
+                 cell.viewToHide.isHidden = false
+             }
+             
+             return cell
         }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             return 160.0
-        }else if indexPath.row == 1 {
+        case 1:
             return 210.0
-        }else if indexPath.row == 2 {
+        case 2:
             return UITableView.automaticDimension
-        }else {
-            return 180.0
+        case 3:
+            if self.isViewHidden == true {
+                return 70.0
+            }else {
+                return 160.0
+            }
+        case 4:
+            if self.isViewEventSponsorHidden == true {
+                return 70.0
+            }else {
+                return 190.0
+            }
+        default:
+            return 0
         }
     }
     
@@ -85,10 +117,20 @@ extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
         debugPrint("Did Select")
         debugPrint(indexPath.row)
         if indexPath.row == 3 {
-            let currentCell = tableView.cellForRow(at: indexPath) as! EventOrganizerCell
-            currentCell.viewOrganizersInfo.isHidden = false
+            if self.isViewHidden  == true {
+                self.isViewHidden = false
+            }else {
+                self.isViewHidden = true
+            }
+            self.tableView.reloadData()
+        }else if indexPath.row == 4 {
+            if self.isViewEventSponsorHidden  == true {
+                self.isViewEventSponsorHidden = false
+            }else {
+                self.isViewEventSponsorHidden = true
+            }
         }
-        
+        self.tableView.reloadData()
     }
     
 }
