@@ -11,6 +11,7 @@ import UIKit
 class ViewModel: NSObject {
     
     func loadData() {
+        debugPrint("Print data")
         let params = [
             "user_id": 0,
             "event_id": 12,
