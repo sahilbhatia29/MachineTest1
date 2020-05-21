@@ -29,8 +29,8 @@ class ViewModel {
        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
            print(response!)
            do {
-            let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
-               print(json)
+//            let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
+//               print(json)
             let resultData = try JSONDecoder().decode(ResponseData.self, from: data!)
             debugPrint(resultData.data)
             completionHandler(resultData)
