@@ -12,6 +12,7 @@ class EventSponsorCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var viewImageContainer: UIView!
     
+    @IBOutlet weak var labelSponsorName: UILabel!
     @IBOutlet weak var imageSponsor: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

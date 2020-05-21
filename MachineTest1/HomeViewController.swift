@@ -21,10 +21,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonPromoteEvent: UIButton!
     @IBOutlet weak var buttonAddTickets: UIButton!
     @IBOutlet weak var buttonFeatured: UIButton!
+    //var eventData: EventData?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewModelObject = ViewModel()
-        viewModelObject.loadData()
+//        let viewModelObject = ViewModel()
+//        viewModelObject.loadData { (data) in
+//            debugPrint(data.data)
+//            self.eventData = data.data
+//            debugPrint(data.data.category_name)
+//        }
         self.setCornerRadius()
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
 //        self.contentView.addGestureRecognizer(tap)

@@ -15,6 +15,7 @@ class EventSponsorsCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewToHide: UIView!
     @IBOutlet weak var viewEventSponsor: UIView!
+    var eventData: EventData?
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.layer.cornerRadius = 6.0
@@ -32,20 +33,21 @@ class EventSponsorsCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        8
+        self.eventData?.event_organizer.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : EventSponsorCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventSponsorCollectionCell", for: indexPath) as! EventSponsorCollectionCell
+        cell.labelSponsorName.text = self.eventData?.event_organizer[indexPath.row].o_name
         cell.viewImageContainer.layer.cornerRadius = 4.0
         
-        cell.imageSponsor.layer.cornerRadius = 25.0
+        cell.imageSponsor.layer.cornerRadius = 35.0
         cell.viewImageContainer.layer.borderColor = UIColor.gray.cgColor
         cell.viewImageContainer.layer.borderWidth = 1.0
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80.0, height: 100)
+        return CGSize(width: 120.0, height: 140)
     }
     
 }

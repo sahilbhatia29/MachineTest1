@@ -17,17 +17,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZY-Di-von">
-                        <rect key="frame" x="97" y="62" width="80" height="95"/>
+                        <rect key="frame" x="77" y="44.5" width="120" height="130"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="344112611i9ie40e10e91560395686.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-Q2-Cmk">
-                                <rect key="frame" x="15" y="14.5" width="50" height="50"/>
+                                <rect key="frame" x="25" y="22" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="GLE-ex-K7Z"/>
-                                    <constraint firstAttribute="height" constant="50" id="Kdr-GW-Suc"/>
+                                    <constraint firstAttribute="width" constant="70" id="GLE-ex-K7Z"/>
+                                    <constraint firstAttribute="height" constant="70" id="Kdr-GW-Suc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohammed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slj-wc-AgO">
-                                <rect key="frame" x="7" y="72.5" width="66.5" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohammed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slj-wc-AgO">
+                                <rect key="frame" x="8" y="100" width="104" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,12 +35,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="9VV-8B-QxX"/>
+                            <constraint firstAttribute="width" constant="120" id="9VV-8B-QxX"/>
                             <constraint firstItem="xc5-Q2-Cmk" firstAttribute="centerY" secondItem="UZY-Di-von" secondAttribute="centerY" constant="-8" id="FEj-yu-Yof"/>
-                            <constraint firstAttribute="height" constant="95" id="NAZ-sL-wkT"/>
+                            <constraint firstAttribute="height" constant="130" id="NAZ-sL-wkT"/>
                             <constraint firstItem="Slj-wc-AgO" firstAttribute="top" secondItem="xc5-Q2-Cmk" secondAttribute="bottom" constant="8" id="Qra-3m-cgS"/>
                             <constraint firstItem="xc5-Q2-Cmk" firstAttribute="centerX" secondItem="UZY-Di-von" secondAttribute="centerX" id="c1y-vu-HEX"/>
                             <constraint firstItem="Slj-wc-AgO" firstAttribute="centerX" secondItem="xc5-Q2-Cmk" secondAttribute="centerX" id="cI3-Yb-MU7"/>
+                            <constraint firstAttribute="trailing" secondItem="Slj-wc-AgO" secondAttribute="trailing" constant="8" id="hl5-eo-ZKm"/>
+                            <constraint firstItem="Slj-wc-AgO" firstAttribute="leading" secondItem="UZY-Di-von" secondAttribute="leading" constant="8" id="wgL-Ow-QYs"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -54,6 +56,7 @@
             <size key="customSize" width="274" height="219"/>
             <connections>
                 <outlet property="imageSponsor" destination="xc5-Q2-Cmk" id="hdB-wC-gpD"/>
+                <outlet property="labelSponsorName" destination="Slj-wc-AgO" id="mY3-HN-UcY"/>
                 <outlet property="viewImageContainer" destination="UZY-Di-von" id="Qc6-0U-zz9"/>
             </connections>
             <point key="canvasLocation" x="300" y="168.41517857142856"/>

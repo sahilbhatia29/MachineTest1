@@ -13,8 +13,18 @@ class OverViewVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var isViewHidden = true
     var isViewEventSponsorHidden = true
+    var eventData: EventData?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewModelObject = ViewModel()
+        viewModelObject.loadData { (data) in
+            debugPrint(data.data)
+            self.eventData = data.data
+            debugPrint(data.data.category_name)
+            DispatchQueue.main.async {
+               self.tableView.reloadData()
+            }
+        }
         tableView.register(UINib(nibName: "GeneralInfoCell", bundle: nil), forCellReuseIdentifier: "GeneralInfoCell")
         tableView.register(UINib(nibName: "EventLocationCell", bundle: nil), forCellReuseIdentifier: "EventLocationCell")
         tableView.register(UINib(nibName: "BriefDescriptionCell", bundle: nil), forCellReuseIdentifier: "BriefDescriptionCell")
@@ -75,6 +85,7 @@ extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventSponsorsCell", for: indexPath) as! EventSponsorsCell
+            cell.eventData = self.eventData
             // cell.backgroundColor = .red
              cell.collectionView.reloadData()
              if self.isViewEventSponsorHidden == true {
@@ -106,7 +117,7 @@ extension OverViewVC: UITableViewDataSource, UITableViewDelegate {
             if self.isViewEventSponsorHidden == true {
                 return 70.0
             }else {
-                return 190.0
+                return 210.0
             }
         default:
             return 0
